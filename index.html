@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Ferramentas</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="description">
+            <p>
+                As melhores Ferramentas para seu trabalho no dia dia
+            </p>
+        </div>
+    </main>
+
+    <section>
+        <div class="calculadora-porcentagem">
+            <div class="header">
+                <h2>Porcentagem</h2>
+            </div>
+            <input type="number" placeholder="valor %" required id="porcentagem">
+
+            <input type="number" placeholder="valor" required id="valorReal">
+
+            <button class="converter" id="converter">converter</button>
+            <button id="limpar">limpar</button>
+
+            <div id="resultado"></div>
+        </div>
+    </section>
+
+    <section class="converter-moedas">
+        <h2>Conversor USD → EUR & BRL</h2>
+        <input type="number" id="valorUSD" placeholder="Digite o valor em dólar">
+        <button onclick="converter()">Converter</button>
+        <div id="resultados"></div>
+    </section>]
+
+    <script src="/src/js/script.js"></script>
+</body>
+
+</html>
