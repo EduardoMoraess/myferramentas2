@@ -1,4 +1,4 @@
-//CALCULADORA DE PORCENTAGEM;
+//!CALCULADORA DE PORCENTAGEM;
 function calculadoraPorcentagem() {
     const Porcetagem = document.getElementById("porcentagem");
     const ValorReal = document.getElementById("valorReal");
@@ -29,7 +29,7 @@ function calculadoraPorcentagem() {
 calculadoraPorcentagem();
 //FINALIZADA COM SUCESSO;
 
-//CONVERSOR DE MOEDAS INTERNACIONAIS
+//!CONVERSOR DE MOEDAS INTERNACIONAIS
 async function converter() {
     const valorUSD = parseFloat(document.getElementById("valorUSD").value);
     const resultados = document.getElementById("resultados");
@@ -59,4 +59,46 @@ async function converter() {
     }
 }
 
-//RELOGIO MUNDE;
+//!Calculadora de IMC
+function CalculadoraIMC() {
+    const Resultado = document.getElementById('resultado');
+    const Calcular = document.getElementById('calcular');
+    const Altura = document.getElementById('altura');
+    const Peso = document.getElementById('peso');
+    const Esvaziar = document.getElementById('esvaziar');
+
+    const classificacoes = [
+        { min: 0, max: 18.5, texto: "Abaixo do peso" },
+        { min: 18.5, max: 25, texto: "Peso normal" },
+        { min: 25, max: 30, texto: "Sobrepeso" },
+        { min: 30, max: 35, texto: "Obesidade grau I" },
+        { min: 35, max: 40, texto: "Obesidade grau II" },
+        { min: 40, max: Infinity, texto: "Obesidade grau III" }
+    ];
+
+    Calcular.addEventListener('click', () => {
+        const altura = parseFloat(Altura.value.replace(',', '.'));
+        const peso = parseFloat(Peso.value.replace(',', '.'));
+
+        if (!altura || !peso || altura <= 0) {
+            Resultado.textContent = "Por favor, insira valores válidos.";
+            Resultado.style.color = "orange";
+            return;
+        }
+
+        let imc = peso / (altura ** 2);
+        let faixa = classificacoes.find(f => imc >= f.min && imc < f.max);
+
+        Resultado.innerHTML = `Seu IMC é <strong>${imc.toFixed(2)}</strong><br>${faixa.texto}`;
+        Resultado.style.color = "#f8fafc";
+    });
+
+    //? Agora fora do cálculo — só executa uma vez
+    Esvaziar.addEventListener('click', () => {
+        Altura.value = "";
+        Peso.value = "";
+        Resultado.textContent = "";
+        alert('Tudo esvaziardo com sucesso!')
+    });
+}
+CalculadoraIMC();
