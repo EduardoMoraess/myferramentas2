@@ -58,3 +58,5 @@ async function converter() {
         resultados.textContent = "Erro ao obter as cotações. Tente novamente.";
     }
 }
+
+//RELOGIO MUNDE;
