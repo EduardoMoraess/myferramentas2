@@ -1,4 +1,4 @@
-//!CALCULADORA DE PORCENTAGEM;
+//CALCULADORA DE PORCENTAGEM;
 function calculadoraPorcentagem() {
     const Porcetagem = document.getElementById("porcentagem");
     const ValorReal = document.getElementById("valorReal");
@@ -29,7 +29,7 @@ function calculadoraPorcentagem() {
 calculadoraPorcentagem();
 //FINALIZADA COM SUCESSO;
 
-//!CONVERSOR DE MOEDAS INTERNACIONAIS
+//CONVERSOR DE MOEDAS INTERNACIONAIS
 async function converter() {
     const valorUSD = parseFloat(document.getElementById("valorUSD").value);
     const resultados = document.getElementById("resultados");
@@ -59,7 +59,7 @@ async function converter() {
     }
 }
 
-//!Calculadora de IMC
+//Calculadora de IMC
 function CalculadoraIMC() {
     const Resultado = document.getElementById('resultado');
     const Calcular = document.getElementById('calcular');
@@ -77,8 +77,8 @@ function CalculadoraIMC() {
     ];
 
     Calcular.addEventListener('click', () => {
-        const altura = parseFloat(Altura.value.replace(',', '.'));
-        const peso = parseFloat(Peso.value.replace(',', '.'));
+        let altura = parseFloat(Altura.value.replace(',', '.'));
+        let peso = parseFloat(Peso.value.replace(',', '.'));
 
         if (!altura || !peso || altura <= 0) {
             Resultado.textContent = "Por favor, insira valores válidos.";
